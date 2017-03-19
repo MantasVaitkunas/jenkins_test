@@ -1,15 +1,21 @@
 pipeline {
+    agent any
+
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                sh 'php --version'
-		sh 'echo output'
+                echo 'Building..'
             }
         }
-	stage('test') {
-	    steps {
-                bash 'echo running tests'
+        stage('Test') {
+            steps {
+                echo 'Testing..'
             }
-	}
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
 }
